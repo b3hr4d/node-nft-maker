@@ -1,0 +1,25 @@
+{
+  "name": "random-nft",
+  "version": "1.0.0",
+  "main": "src/app.ts",
+  "license": "MIT",
+  "scripts": {
+    "replace": "rimraf ./build && tsc",
+    "start": "npm run replace && node build",
+    "start:background": "nohup npm run start &",
+    "start:dev": "nodemon"
+  },
+  "devDependencies": {
+    "@types/jsonfile": "^6.1.0",
+    "@types/mime": "^3.0.1",
+    "@types/node": "^18.7.18",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.29",
+    "ethers": "^5.7.1",
+    "mime": "^3.0.0",
+    "nft.storage": "^7.0.0"
+  }
+}
