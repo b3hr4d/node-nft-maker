@@ -1,7 +1,6 @@
 import { Canvas } from "@napi-rs/canvas"
 import { existsSync, mkdirSync } from "fs"
 import { writeFile } from "fs/promises"
-import { writeFileSync } from "jsonfile"
 import { File, FilesSource, NFTStorage } from "nft.storage"
 import { join } from "path"
 import { Attributes, MetaData } from "./types"
@@ -10,7 +9,7 @@ const NFT_STORAGE_TOKEN = process.env.NFT_STORAGE_TOKEN || ""
 
 const client = new NFTStorage({ token: NFT_STORAGE_TOKEN })
 
-const getPath = (path: string) => join(__dirname, path)
+export const getPath = (path: string) => join(__dirname, path)
 
 export const checkDirectory = async (path: string) => {
   const dir = getPath(path)
@@ -57,6 +56,8 @@ export const saveDirectory = async (
   return ipfs ? await client.storeDirectory(file) : ""
 }
 
-export const fileSync = (allMeta: { [key: string]: [string, string] }) => {
-  writeFileSync(getPath("../dist/allMeta.json"), allMeta, { spaces: 2 })
+export const fileSync = async (allMeta: Partial<MetaData>[]) => {
+  const stringMeta = JSON.stringify(allMeta, null, 2)
+
+  await writeFile(getPath(`../dist/allMeta.json`), stringMeta)
 }

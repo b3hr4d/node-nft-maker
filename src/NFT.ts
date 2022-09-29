@@ -25,17 +25,24 @@ export const allData: Attributes = {
   Diamond: 0,
 }
 
+const colors = {
+  Grass: 4823882,
+  Sand: 16504486,
+  Water: 8900331,
+  Snow: 16775930,
+}
+
 export default function drawRandomNFT(
   image: Image,
-  typeChane: number[],
-  attrChane: number[]
+  typeChance: number[],
+  attrChance: number[]
 ) {
-  const tileMap = generateTileMap(typeChane, attrChane)
+  const tileMap = generateTileMap(typeChance, attrChance)
 
   const cols = tileMap[0] % rows
   const baseType = TileType[cols] as Type
 
-  allData[baseType]++
+  const color = colors[baseType]
 
   const canvas = drawFromMap(image, tileMap)
 
@@ -70,5 +77,5 @@ export default function drawRandomNFT(
         break
     }
   })
-  return { canvas, tileMap, attributes }
+  return { canvas, tileMap, color, attributes }
 }

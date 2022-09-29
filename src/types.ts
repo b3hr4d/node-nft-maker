@@ -22,12 +22,20 @@ export type Attr = keyof typeof TileAttributes
 
 type AllData = Type | Attr
 
+export type MapData = {
+  id: number
+  phi: number
+  theta: number
+  lat: number
+  lng: number
+}
 export interface MetaData {
   name: string
+  mapData: MapData
   external_url: string
   description: string
   image: string
-  data: string
+  hashData: string
   tileMap: Uint8Array
   attributes: StandardType[]
 }
