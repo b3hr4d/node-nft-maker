@@ -1,6 +1,6 @@
-import { loadImage } from "@napi-rs/canvas"
 import { hexlify } from "ethers/lib/utils"
 import { File } from "nft.storage"
+import { loadTexture } from "./canvas"
 import {
   checkDirectory,
   fileSync,
@@ -8,7 +8,7 @@ import {
   saveMetadata,
   savePicture,
 } from "./files"
-import drawRandomNFT, { allData } from "./NFT"
+import drawRandomNFT, { allAttributes } from "./NFT"
 import tiles from "./tiles.json"
 import { MetaData } from "./types"
 
@@ -23,15 +23,14 @@ const allMapData: {
 }[] = []
 
 // upload to IPFS
-const online = true
+const online = false
 
-loadImage("./src/Texture.png").then(async (image) => {
+const main = async () => {
   checkDirectory("../dist/images")
   checkDirectory("../dist/metadata")
   // generate 100 tile map and save to file
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 100; i++) {
     const { canvas, tileMap, color, attributes } = drawRandomNFT(
-      image,
       // [ "Grass", "Snow", "Water", "Sand" ],
       [60, 20, 15, 5],
       //["normal", "effect", "unbuild", "tree", "charcoal", "iron", "gold", "crystal", "diamond"],
@@ -68,9 +67,11 @@ loadImage("./src/Texture.png").then(async (image) => {
     }
   }
 
-  const ipfs = await saveDirectory(allNFT, allData, online)
+  const ipfs = await saveDirectory(allNFT, allAttributes, online)
 
   fileSync(allMapData)
 
   console.log("allNFT", ipfs)
-})
+}
+
+loadTexture("./src/Texture.png").then(() => main())

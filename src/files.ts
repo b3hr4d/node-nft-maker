@@ -54,7 +54,5 @@ export const saveDirectory = async (
 }
 
 export const fileSync = async (allMeta: any[]) => {
-  const stringMeta = JSON.stringify(allMeta, null, 2)
-
-  await writeFile(getPath(`../dist/allMapData.json`), stringMeta)
+  await writeFile(getPath(`../dist/allMapData.json`), JSON.stringify(allMeta))
 }

@@ -1,4 +1,3 @@
-import { Image } from "@napi-rs/canvas"
 import { drawFromMap, generateTileMap, rows } from "./canvas"
 import {
   Attr,
@@ -9,7 +8,7 @@ import {
   Type,
 } from "./types"
 
-export const allData: Attributes = {
+export const allAttributes: Attributes = {
   Base: 0,
   Grass: 0,
   Snow: 0,
@@ -33,7 +32,6 @@ const colors = {
 }
 
 export default function drawRandomNFT(
-  image: Image,
   typeChance: number[],
   attrChance: number[]
 ) {
@@ -42,11 +40,11 @@ export default function drawRandomNFT(
   const cols = tileMap[0] % rows
   const baseType = TileType[cols] as Type
 
-  allData[baseType]++
+  allAttributes[baseType]++
 
   const color = colors[baseType]
 
-  const canvas = drawFromMap(image, tileMap)
+  const canvas = drawFromMap(tileMap)
 
   const buildable = { trait_type: "Buildable", value: 0 }
   const unBuildable = { trait_type: "UnBuildable", value: 0 }
@@ -63,7 +61,7 @@ export default function drawRandomNFT(
   tileMap.forEach((item) => {
     const value = TileAttributes[Math.trunc(item / rows)] as Attr
 
-    allData[value]++
+    allAttributes[value]++
     switch (value) {
       case "Base":
         buildable.value++
