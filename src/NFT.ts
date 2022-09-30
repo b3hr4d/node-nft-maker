@@ -42,6 +42,8 @@ export default function drawRandomNFT(
   const cols = tileMap[0] % rows
   const baseType = TileType[cols] as Type
 
+  allData[baseType]++
+
   const color = colors[baseType]
 
   const canvas = drawFromMap(image, tileMap)

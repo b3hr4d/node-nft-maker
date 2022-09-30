@@ -36,7 +36,7 @@ export interface MetaData {
   description: string
   image: string
   hashData: string
-  tileMap: Uint8Array
+  tileMap: number[]
   attributes: StandardType[]
 }
 

@@ -13,24 +13,33 @@ import tiles from "./tiles.json"
 import { MetaData } from "./types"
 
 const allNFT: File[] = []
-const allMeta: Partial<MetaData>[] = []
+const allMapData: {
+  color: number
+  id: number
+  phi: number
+  theta: number
+  lat: number
+  lng: number
+}[] = []
 
 // upload to IPFS
-const online = false
+const online = true
 
 loadImage("./src/Texture.png").then(async (image) => {
   checkDirectory("../dist/images")
   checkDirectory("../dist/metadata")
   // generate 100 tile map and save to file
-  for (let i = 0; i < 10000; i++) {
+  for (let i = 0; i < 10; i++) {
     const { canvas, tileMap, color, attributes } = drawRandomNFT(
       image,
+      // [ "Grass", "Snow", "Water", "Sand" ],
       [60, 20, 15, 5],
-      [30, 20, 20, 10, 10, 7, 5, 2.5, 1]
+      //["normal", "effect", "unbuild", "tree", "charcoal", "iron", "gold", "crystal", "diamond"],
+      [30, 20, 20, 10, 8, 5, 3.5, 2.5, 1]
+      //30 + 20 + 20 + 10 + 8 + 5 + 3.5 + 2.5 + 1 = 100%
     )
     try {
       const url = await savePicture(canvas, i, online)
-
       console.log(i, url)
 
       const image = `ipfs://${url}`
@@ -39,7 +48,7 @@ loadImage("./src/Texture.png").then(async (image) => {
       const id = mapData.id
       const name = `SmartLand #${id}`
       const external_url = `https://smartworld.app/land?tile=${id}`
-      const description = `This nft is (${id}/10,000) land in the smart world Globe (lat=${mapData.lat}, lng=${mapData.lng}), you can use it to build your own world.`
+      const description = `This nft (${id}/10,000) land in the Smart World Globe (lat:${mapData.lat}, lng:${mapData.lng}), you can use it to build your own world.`
 
       const metadata: MetaData = {
         name,
@@ -47,18 +56,12 @@ loadImage("./src/Texture.png").then(async (image) => {
         description,
         image,
         hashData,
-        tileMap,
+        tileMap: new Array(...tileMap),
         mapData,
         attributes,
       }
 
-      allMeta[i] = {
-        name,
-        image,
-        mapData,
-        tileMap,
-        attributes,
-      }
+      allMapData[i] = mapData
       allNFT.push(await saveMetadata(metadata, i))
     } catch (err) {
       console.log("url: ", err)
@@ -67,7 +70,7 @@ loadImage("./src/Texture.png").then(async (image) => {
 
   const ipfs = await saveDirectory(allNFT, allData, online)
 
-  fileSync(allMeta)
+  fileSync(allMapData)
 
   console.log("allNFT", ipfs)
 })

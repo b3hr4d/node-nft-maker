@@ -48,16 +48,13 @@ export const saveDirectory = async (
   allData: Attributes,
   ipfs?: boolean
 ) => {
-  await writeFile(
-    getPath("../dist/allData.json"),
-    JSON.stringify(allData, null, 2)
-  )
+  await writeFile(getPath("../dist/allData.json"), JSON.stringify(allData))
 
   return ipfs ? await client.storeDirectory(file) : ""
 }
 
-export const fileSync = async (allMeta: Partial<MetaData>[]) => {
+export const fileSync = async (allMeta: any[]) => {
   const stringMeta = JSON.stringify(allMeta, null, 2)
 
-  await writeFile(getPath(`../dist/allMeta.json`), stringMeta)
+  await writeFile(getPath(`../dist/allMapData.json`), stringMeta)
 }
