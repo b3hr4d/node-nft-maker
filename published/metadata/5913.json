@@ -1,33 +1,33 @@
 {
-  "name": "SmartLand #5914",
-  "external_url": "https://smartworld.app/land?tile=5914",
-  "description": "This nft (5914/10,000) land in the Smart World Globe (lat:11, lng:14087), you can use it to build your own world.",
-  "image": "ipfs://bafkreic7yvfxii6wkrbeqejfflksrxz4x2cjieirbxpnjhwjvtaxk3f4re",
-  "hashData": "0x2d0000000000000000000012001b0000",
+  "name": "SmartLand #5913",
+  "external_url": "https://smartworld.app/land?tile=5913",
+  "description": "This nft (5913/10,000) land in the Smart World Globe (lat:11, lng:14089), you can use it to build your own world.",
+  "image": "ipfs://bafkreihuuq7irshz3gdr2ldgylasyna6d3kd2uerdvyqvhq5nl4xzce7xu",
+  "hashData": "0x0000000000243f000012000000000900",
   "tileMap": [
-    45,
     0,
     0,
     0,
     0,
     0,
-    0,
-    0,
-    0,
+    36,
+    63,
     0,
     0,
     18,
     0,
-    27,
     0,
+    0,
+    0,
+    9,
     0
   ],
   "mapData": {
-    "id": 5914,
-    "phi": 1.387082930886856,
-    "theta": 245.86634063268144,
+    "id": 5913,
+    "phi": 1.3872863298887343,
+    "theta": 245.90239396962806,
     "lat": 11,
-    "lng": 14087,
+    "lng": 14089,
     "color": 4823882
   },
   "attributes": [
@@ -45,11 +45,11 @@
     },
     {
       "trait_type": "Resource",
-      "value": "Iron"
+      "value": "Charcoal"
     },
     {
       "trait_type": "Resource",
-      "value": "Tree"
+      "value": "Crystal"
     }
   ]
 }

@@ -1,33 +1,33 @@
 {
-  "name": "SmartLand #3110",
-  "external_url": "https://smartworld.app/land?tile=3110",
-  "description": "This nft (3110/10,000) land in the Smart World Globe (lat:-22, lng:19890), you can use it to build your own world.",
-  "image": "ipfs://bafkreiaiwtdleoqhczi6yossvyvyb5jb7tg6xwrgpkbtqghgmmaixlsuty",
-  "hashData": "0x00001224000000000000000000090012",
+  "name": "SmartLand #3109",
+  "external_url": "https://smartworld.app/land?tile=3109",
+  "description": "This nft (3109/10,000) land in the Smart World Globe (lat:-22, lng:19893), you can use it to build your own world.",
+  "image": "ipfs://bafkreihmqxj3trsikh52vpvjbj7njgjg4ymasxhlvnxgmtgdc4tj2l7x5u",
+  "hashData": "0x09001212001200000000003600000012",
   "tileMap": [
-    0,
+    9,
     0,
     18,
-    36,
+    18,
+    0,
+    18,
     0,
     0,
     0,
     0,
     0,
+    54,
     0,
     0,
-    0,
-    0,
-    9,
     0,
     18
   ],
   "mapData": {
-    "id": 3110,
-    "phi": 1.958498566221209,
-    "theta": 347.152188876903,
+    "id": 3109,
+    "phi": 1.9587145881505037,
+    "theta": 347.19047968134544,
     "lat": -22,
-    "lng": 19890,
+    "lng": 19893,
     "color": 4823882
   },
   "attributes": [
@@ -37,15 +37,15 @@
     },
     {
       "trait_type": "Buildable",
-      "value": 13
+      "value": 11
     },
     {
       "trait_type": "UnBuildable",
-      "value": 2
+      "value": 4
     },
     {
       "trait_type": "Resource",
-      "value": "Charcoal"
+      "value": "Gold"
     }
   ]
 }

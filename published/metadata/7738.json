@@ -1,16 +1,16 @@
 {
-  "name": "SmartLand #7739",
-  "external_url": "https://smartworld.app/land?tile=7739",
-  "description": "This nft (7739/10,000) land in the Smart World Globe (lat:33, lng:10067), you can use it to build your own world.",
-  "image": "ipfs://bafkreica4gdd2je25eglfifyctn32qi4u5dyyddaiwj3m3jblxuy6dujgm",
-  "hashData": "0x00120009000000000000000000000012",
+  "name": "SmartLand #7738",
+  "external_url": "https://smartworld.app/land?tile=7738",
+  "description": "This nft (7738/10,000) land in the Smart World Globe (lat:33, lng:10069), you can use it to build your own world.",
+  "image": "ipfs://bafkreicz6c3a7gcbytot6dgsjklvow4th7ryoa5whvcgunz2xsvyf5lb5u",
+  "hashData": "0x00000000001200000000000000000012",
   "tileMap": [
     0,
+    0,
+    0,
+    0,
+    0,
     18,
-    0,
-    9,
-    0,
-    0,
     0,
     0,
     0,
@@ -23,11 +23,11 @@
     18
   ],
   "mapData": {
-    "id": 7739,
-    "phi": 0.9912490011366468,
-    "theta": 175.70309542302903,
+    "id": 7738,
+    "phi": 0.9914879898080776,
+    "theta": 175.74545718005805,
     "lat": 33,
-    "lng": 10067,
+    "lng": 10069,
     "color": 4823882
   },
   "attributes": [

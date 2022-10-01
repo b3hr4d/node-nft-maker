@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for file in `ls|sort -g -r`
+do
+    filename=$(basename "$file")
+    extension=${filename##*.}
+    filename=${filename%.*}
+
+    mv "$file" "$(($filename + 1))".$extension
+done
