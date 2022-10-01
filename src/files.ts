@@ -46,13 +46,17 @@ export async function saveMetadata(metadata: MetaData, name: number | string) {
 export const saveDirectory = async (
   file: FilesSource,
   allData: Attributes,
-  ipfs?: boolean
+  ipfs?: boolean,
+  path = "../dist/allData.json"
 ) => {
-  await writeFile(getPath("../dist/allData.json"), JSON.stringify(allData))
+  await writeFile(getPath(path), JSON.stringify(allData))
 
   return ipfs ? await client.storeDirectory(file) : ""
 }
 
-export const fileSync = async (allMeta: any[]) => {
-  await writeFile(getPath(`../dist/allMapData.json`), JSON.stringify(allMeta))
+export const fileSync = async (
+  allMeta: any[],
+  path = `../dist/allMapData.json`
+) => {
+  await writeFile(getPath(path), JSON.stringify(allMeta))
 }
