@@ -1,0 +1,47 @@
+{
+  "name": "SmartLand #765",
+  "external_url": "https://smartworld.app/land?tile=765",
+  "description": "This nft (765/10,000) land in the Smart World Globe (lat:-58, lng:26214), you can use it to build your own world.",
+  "image": "ipfs://bafkreiexvd6uaxmv2xlut46hybbdrg3ktukvoluoh4jodp722uxiwunuhq",
+  "hashData": "0x12000012000000000900000000000012",
+  "tileMap": [
+    18,
+    0,
+    0,
+    18,
+    0,
+    0,
+    0,
+    0,
+    9,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    18
+  ],
+  "mapData": {
+    "id": 765,
+    "phi": 2.5811413499414577,
+    "theta": 457.5182667413064,
+    "lat": -58,
+    "lng": 26214,
+    "color": 4823882
+  },
+  "attributes": [
+    {
+      "trait_type": "Base",
+      "value": "Grass"
+    },
+    {
+      "trait_type": "Buildable",
+      "value": 13
+    },
+    {
+      "trait_type": "UnBuildable",
+      "value": 3
+    }
+  ]
+}

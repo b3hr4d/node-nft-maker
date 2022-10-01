@@ -1,0 +1,55 @@
+{
+  "name": "SmartLand #9081",
+  "external_url": "https://smartworld.app/land?tile=9081",
+  "description": "This nft (9081/10,000) land in the Smart World Globe (lat:55, lng:6259), you can use it to build your own world.",
+  "image": "ipfs://bafkreibmtadi76yblrndsuk5wqwq2sfjtlrb3aslvxs3zxayjxgs2drdra",
+  "hashData": "0x031e15420303030c0303030303030303",
+  "tileMap": [
+    3,
+    30,
+    21,
+    66,
+    3,
+    3,
+    3,
+    12,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+  ],
+  "mapData": {
+    "id": 9081,
+    "phi": 0.6163074611223596,
+    "theta": 109.24311502693658,
+    "lat": 55,
+    "lng": 6259,
+    "color": 16504486
+  },
+  "attributes": [
+    {
+      "trait_type": "Base",
+      "value": "Sand"
+    },
+    {
+      "trait_type": "Buildable",
+      "value": 13
+    },
+    {
+      "trait_type": "UnBuildable",
+      "value": 1
+    },
+    {
+      "trait_type": "Resource",
+      "value": "Tree"
+    },
+    {
+      "trait_type": "Resource",
+      "value": "Crystal"
+    }
+  ]
+}

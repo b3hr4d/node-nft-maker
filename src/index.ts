@@ -23,13 +23,13 @@ const allMapData: {
 }[] = []
 
 // upload to IPFS
-const online = false
+const online = true
 
 const main = async () => {
   checkDirectory("../dist/images")
   checkDirectory("../dist/metadata")
   // generate 100 tile map and save to file
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 10000; i++) {
     const { canvas, tileMap, color, attributes } = drawRandomNFT(
       // [ "Grass", "Snow", "Water", "Sand" ],
       [60, 20, 15, 5],
